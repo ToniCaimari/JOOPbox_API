@@ -4,6 +4,8 @@ from controller.start import Start
 from controller.failed import Failed
 from controller.list import List
 
+# replica de api.py preparada para tests
+
 
 def create_app():
     app = Flask(__name__)

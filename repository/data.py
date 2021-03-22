@@ -4,6 +4,7 @@ import json
 
 class Data():
 
+    # esquema Json para la validación
     schema = {
         "type": "object",
         "properties": {
@@ -26,6 +27,7 @@ class Data():
         "additionalProperties": False
     }
 
+    # datos a validar
     datos = {"data": [
         {
             "name": "Jhon Snow",
@@ -63,27 +65,31 @@ class Data():
     ]}
 
     @classmethod
-    def get_list(cls):
+    def get_list(cls):  # se crea una lista
         success = []
         datos = cls.datos
         schema = cls.schema
         for i in datos["data"]:
             try:
+                # los datos pasan por el filtro validate
                 validate(instance=i, schema=schema)
+                # se añaden a la lista los que pasen la validación
                 success.append(i)
             except:
                 continue
         return success
 
     @classmethod
-    def get_fail(cls):
+    def get_fail(cls):  # se crea una lista
         fail = []
         datos = cls.datos
         schema = cls.schema
         for i in datos["data"]:
             try:
+                # los datos pasan por el filtro validate
                 validate(instance=i, schema=schema)
                 continue
             except:
+                # se añaden a la lista los que no pasen la validación
                 fail.append(i)
         return fail
