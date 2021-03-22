@@ -6,8 +6,8 @@ app = Flask(__name__)
 api = Api(app)
 
 api.add_resource(Start, '/')
-api.add_resource(List, '/list')
-api.add_resource(Fail, '/fail')
+# api.add_resource(List, '/list')
+# api.add_resource(Fail, '/fail')
 
 if __name__ == '__main__':
     app.run(debug=True)
