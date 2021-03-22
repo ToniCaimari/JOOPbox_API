@@ -12,7 +12,9 @@ dos listas, una que almacene los datos validados y otra que almacene los datos q
 ### aplicar validación sobre:
 
 -"id"
+
 -"birth-date"
+
 -"email"
 
 ## Fuentes y recursos externos
@@ -25,6 +27,9 @@ asimismo como guia para los casos test.
 ### Librerias
 
 -flask
+
 -flask_restful
+
 -json
+
 -jsonschema
