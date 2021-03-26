@@ -6,4 +6,4 @@ from repository.data import Data
 def test_data():
 
     assert 3 == len(Data.get_list())
-    assert 1 == len(Data.get_fail())
+    assert 2 == len(Data.get_fail())
