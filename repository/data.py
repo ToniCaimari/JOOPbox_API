@@ -1,5 +1,6 @@
 from jsonschema import validate
 import json
+from service.date_validator import date_validator
 
 
 class Data():
@@ -61,6 +62,14 @@ class Data():
             "street_type": "Boulevard",
             "birth_date": "1984-11-01",
             "interests": "Rule the world"
+        },
+        {
+            "name": "Toni Caimari",
+            "id": "X7654321-J",
+            "phone_number": 616000540,
+            "street_name": "python's exception 22, 1",
+            "street_type": "Street",
+            "birth_date": "12-12-1995"
         }
     ]}
 
@@ -73,6 +82,7 @@ class Data():
             try:
                 # los datos pasan por el filtro validate
                 validate(instance=i, schema=schema)
+                date_validator(i) == True
                 # se añaden a la lista los que pasen la validación
                 success.append(i)
             except:
@@ -88,6 +98,7 @@ class Data():
             try:
                 # los datos pasan por el filtro validate
                 validate(instance=i, schema=schema)
+                date_validator(i)
                 continue
             except:
                 # se añaden a la lista los que no pasen la validación
