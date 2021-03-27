@@ -105,24 +105,39 @@ class Data():
                 # los datos pasan por el filtro validate y verifican el nif directamente ya que es un campo necesario
                 validate(instance=i, schema=schema)
                 if nif_validator(i) == True:
-                    success.append(i)
+                    try:
+                        date_validator(i) == True
+                        if email_validator(i) == True:
+                            if i not in fail:
+                                if i not in success:
+                                    success.append(i)
+                        else:
+                            if i not in fail:
+                                fail.append(i)
+                    except:
+                        if i not in fail:
+                            fail.append(i)
+                        else:
+                            fail.append(i)
                 else:
                     fail.append(i)
             except:
                 fail.append(i)
 
-            try:
-                date_validator(i) == True
-                if email_validator(i) == True:
-                    if i not in fail:
-                        if i not in success:
-                            success.append(i)
-                else:
-                    if i not in fail:
-                        fail.append(i)
-            except:
-                if i not in fail:
-                    fail.append(i)
+            # try:
+            #     date_validator(i) == True
+            #     if email_validator(i) == True:
+            #         if i not in fail:
+            #             if i not in success:
+            #                 success.append(i)
+            #     else:
+            #         if i not in fail:
+            #             fail.append(i)
+            #         if i in success:
+            #             success.pop(i)
+            # except:
+            #     if i not in fail:
+            #         fail.append(i)
 
                 # se añaden a la lista los que pasen la validación
         return success
@@ -134,26 +149,26 @@ class Data():
         datos = cls.datos
         schema = cls.schema
         for i in datos["data"]:
-
             try:
                 # los datos pasan por el filtro validate y verifican el nif directamente ya que es un campo necesario
                 validate(instance=i, schema=schema)
                 if nif_validator(i) == True:
-                    success.append(i)
+                    try:
+                        date_validator(i) == True
+                        if email_validator(i) == True:
+                            if i not in fail:
+                                if i not in success:
+                                    success.append(i)
+                        else:
+                            if i not in fail:
+                                fail.append(i)
+                    except:
+                        if i not in fail:
+                            fail.append(i)
+                        else:
+                            fail.append(i)
                 else:
                     fail.append(i)
             except:
                 fail.append(i)
-
-            try:
-                date_validator(i) == True
-                if email_validator(i) == True:
-                    if i not in fail:  # debido al primer filtro validate podría ya encontrarse en fail
-                        success.append(i)
-                else:
-                    if i not in fail:  # debido al primer filtro validate podría ya encontrarse en fail
-                        fail.append(i)
-            except:
-                if i not in fail:  # debido al primer filtro validate podría ya encontrarse en fail
-                    fail.append(i)
         return fail
