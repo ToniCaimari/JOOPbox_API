@@ -2,14 +2,14 @@
 
 > Prueba técnica de JOOPbox sobre una api rest simple
 
-## >Objetivo principal
+## Objetivo principal
 
 > Obtener los datos de un documento Json y filtrarlos a través de un JsonSchema dando como resultado
 > dos listas, una que almacene los datos validados y otra que almacene los datos que no pasaron el filtro.
 
-## >Objetivos secundarios
+## Objetivos secundarios
 
-### >aplicar validación sobre:
+### aplicar validación sobre:
 
 > -"id"
 >
@@ -17,9 +17,9 @@
 >
 > -"email"
 
-## >Fuentes y recursos externos
+## Fuentes y recursos externos
 
-### >Código
+### Código
 
 > Se ha reutilizado código de \*[David Gelpi("dfleta")](https://github.com/dfleta/flask-rest-ci-boilerplate) para el inicio de la api y su estructura de directorios
 > asimismo como guia para los casos test.
@@ -32,7 +32,7 @@
 >
 > \*[email](https://www.geeksforgeeks.org/check-if-email-address-valid-or-not-in-python/)
 
-### >Librerias
+### Librerias
 
 > \*[-flask](https://flask.palletsprojects.com/en/1.1.x/installation/)
 >
