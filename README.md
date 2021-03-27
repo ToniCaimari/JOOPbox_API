@@ -57,7 +57,7 @@
 
 - Creamos el **entorno Virtual**:
 
-python -m venv env
+  python -m venv env
 
 ##
 
