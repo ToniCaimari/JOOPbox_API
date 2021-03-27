@@ -26,7 +26,7 @@
 
 > He buscado y utilizado referencias para los filtros adicionales:
 >
-> \*[nif](<(https://discusionesconmipadre.wordpress.com/2010/10/19/comprobar-nif-con-python/)>)
+> \*[nif](https://discusionesconmipadre.wordpress.com/2010/10/19/comprobar-nif-con-python/)
 >
 > \*[date](https://www.kite.com/python/answers/how-to-validate-a-date-string-format-in-python#)
 >
