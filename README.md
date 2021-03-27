@@ -21,7 +21,7 @@
 
 ## WINDOWS
 
-##
+#
 
 - Crea un directorio
 
