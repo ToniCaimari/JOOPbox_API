@@ -57,7 +57,7 @@
 
 - Creamos el **entorno Virtual**:
 
-  C:\Users\q\Starship-Business\Ricksy-business>python -m venv env
+python -m venv env
 
 ##
 
@@ -65,7 +65,7 @@
 
 - Iniciamos el **entorno Virtual**:
 
-  C:\Users\q\Starship-Business\Ricksy-business>env\Scripts\activate
+  env\Scripts\activate
 
 ##
 
@@ -73,7 +73,7 @@
 
 - Ahora instalamos todas las dependencias:
 
-  (env) C:\Users\q\Starship-Business\Ricksy-business>pip install -r requirements.txt
+  pip install -r requirements.txt
 
 ##
 
