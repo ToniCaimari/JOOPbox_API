@@ -2,6 +2,7 @@ from jsonschema import validate
 import json
 from service.date_validator import date_validator
 from service.email_validator import email_validator
+from service.nif_validator import nif_validator
 
 
 class Data():
@@ -84,7 +85,7 @@ class Data():
         },
         {
             "name": "Cino Maitari",
-            "id": "X7220321-J",
+            "id": "49483962-Z",
             "phone_number": 619636540,
             "email": "tonicaimbril@gmail.com",
             "street_name": "python's exception 44, 5",
@@ -101,20 +102,21 @@ class Data():
         schema = cls.schema
         for i in datos["data"]:
             try:
-                # los datos pasan por el filtro validate
+                # los datos pasan por el filtro validate y verifican el nif directamente ya que es un campo necesario
                 validate(instance=i, schema=schema)
+                if nif_validator(i) == True:
+                    success.append(i)
+                else:
+                    fail.append(i)
             except:
                 fail.append(i)
-            # if email_validator(i) == True:
-            #     if date_validator(i)==True:
-            #             success.append(i)
-            # else:
-            #     fail.append(i)
+
             try:
                 date_validator(i) == True
                 if email_validator(i) == True:
                     if i not in fail:
-                        success.append(i)
+                        if i not in success:
+                            success.append(i)
                 else:
                     if i not in fail:
                         fail.append(i)
@@ -132,25 +134,26 @@ class Data():
         datos = cls.datos
         schema = cls.schema
         for i in datos["data"]:
+
             try:
-                # los datos pasan por el filtro validate
+                # los datos pasan por el filtro validate y verifican el nif directamente ya que es un campo necesario
                 validate(instance=i, schema=schema)
+                if nif_validator(i) == True:
+                    success.append(i)
+                else:
+                    fail.append(i)
             except:
                 fail.append(i)
-            # if email_validator(i) == True:
-            #     if date_validator(i)==True:
-            #             success.append(i)
-            # else:
-            #     fail.append(i)
+
             try:
                 date_validator(i) == True
                 if email_validator(i) == True:
-                    if i not in fail:
+                    if i not in fail:  # debido al primer filtro validate podría ya encontrarse en fail
                         success.append(i)
                 else:
-                    if i not in fail:
+                    if i not in fail:  # debido al primer filtro validate podría ya encontrarse en fail
                         fail.append(i)
             except:
-                if i not in fail:
+                if i not in fail:  # debido al primer filtro validate podría ya encontrarse en fail
                     fail.append(i)
         return fail
