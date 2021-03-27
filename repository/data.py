@@ -1,6 +1,7 @@
 from jsonschema import validate
 import json
 from service.date_validator import date_validator
+from service.email_validator import email_validator
 
 
 class Data():
@@ -60,8 +61,9 @@ class Data():
             "phone_number": 609000000,
             "street_name": "PHP spaguetti code 169, 5",
             "street_type": "Boulevard",
-            "birth_date": "1984-11-01",
-            "interests": "Rule the world"
+            "birth_date": "12-12-1995",
+            "interests": "Rule the world",
+
         },
         {
             "name": "Toni Caimari",
@@ -70,27 +72,30 @@ class Data():
             "street_name": "python's exception 22, 1",
             "street_type": "Street",
             "birth_date": "12-12-1995"
+        },
+        {
+            "name": "Coni Taimari",
+            "id": "X7000321-J",
+            "phone_number": 616036540,
+            "email": "estonoesunemail",
+            "street_name": "python's exception 50, 1",
+            "street_type": "Street",
+            "birth_date": "1995-12-12"
+        },
+        {
+            "name": "Cino Maitari",
+            "id": "X7220321-J",
+            "phone_number": 619636540,
+            "email": "tonicaimbril@gmail.com",
+            "street_name": "python's exception 44, 5",
+            "street_type": "Street",
+            "birth_date": "1995-06-09"
         }
     ]}
 
     @classmethod
     def get_list(cls):  # se crea una lista
         success = []
-        datos = cls.datos
-        schema = cls.schema
-        for i in datos["data"]:
-            try:
-                # los datos pasan por el filtro validate
-                validate(instance=i, schema=schema)
-                date_validator(i) == True
-                # se añaden a la lista los que pasen la validación
-                success.append(i)
-            except:
-                continue
-        return success
-
-    @classmethod
-    def get_fail(cls):  # se crea una lista
         fail = []
         datos = cls.datos
         schema = cls.schema
@@ -98,9 +103,54 @@ class Data():
             try:
                 # los datos pasan por el filtro validate
                 validate(instance=i, schema=schema)
-                date_validator(i)
-                continue
             except:
-                # se añaden a la lista los que no pasen la validación
                 fail.append(i)
+            # if email_validator(i) == True:
+            #     if date_validator(i)==True:
+            #             success.append(i)
+            # else:
+            #     fail.append(i)
+            try:
+                date_validator(i) == True
+                if email_validator(i) == True:
+                    if i not in fail:
+                        success.append(i)
+                else:
+                    if i not in fail:
+                        fail.append(i)
+            except:
+                if i not in fail:
+                    fail.append(i)
+
+                # se añaden a la lista los que pasen la validación
+        return success
+
+    @classmethod
+    def get_fail(cls):  # se crea una lista
+        success = []
+        fail = []
+        datos = cls.datos
+        schema = cls.schema
+        for i in datos["data"]:
+            try:
+                # los datos pasan por el filtro validate
+                validate(instance=i, schema=schema)
+            except:
+                fail.append(i)
+            # if email_validator(i) == True:
+            #     if date_validator(i)==True:
+            #             success.append(i)
+            # else:
+            #     fail.append(i)
+            try:
+                date_validator(i) == True
+                if email_validator(i) == True:
+                    if i not in fail:
+                        success.append(i)
+                else:
+                    if i not in fail:
+                        fail.append(i)
+            except:
+                if i not in fail:
+                    fail.append(i)
         return fail
