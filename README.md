@@ -21,13 +21,11 @@
 
 ## WINDOWS
 
-#
+##
 
 - Crea un directorio
 
-##
-
-    mkdir <name>
+  mkdir <name>
 
 ##
 
@@ -45,7 +43,7 @@
 
 ##
 
-    git clone https://github.com/OualidZM/Ricksy-business.git
+    git clone https://github.com/ToniCaimari/JOOPbox_API.git
 
 #
 
