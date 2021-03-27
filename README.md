@@ -17,6 +17,68 @@
 >
 > -"email"
 
+## **INSTRUCCIONES PARA TENER INSTALADO EL ENTORNO VIRTUAL, CON TODAS LAS DEPENDENCIAS NECESARIAS**
+
+## WINDOWS
+
+#
+
+- Crea un directorio
+
+##
+
+    mkdir <name>
+
+##
+
+#
+
+- sitúate encima
+
+##
+
+    cd Starship-Business
+
+#
+
+- Clonar el repositorio:
+
+##
+
+    git clone https://github.com/OualidZM/Ricksy-business.git
+
+#
+
+- Instalamos el **entorno Virtual** en nuestro ordenador:
+
+##
+
+    pip install virtualenv
+
+#
+
+- Creamos el **entorno Virtual**:
+
+##
+
+     C:\Users\q\Starship-Business\Ricksy-business>python -m venv env
+
+#
+
+- Iniciamos el **entorno Virtual**:
+
+##
+
+     C:\Users\q\Starship-Business\Ricksy-business>env\Scripts\activate
+
+#
+
+- Ahora instalamos todas las dependencias:
+
+##
+
+    (env) C:\Users\q\Starship-Business\Ricksy-business>pip install -r requirements.txt
+
 ## Fuentes y recursos externos
 
 ### Código
