@@ -33,9 +33,7 @@
 
 - sitúate encima
 
-##
-
-    cd Starship-Business
+  cd Starship-Business
 
 #
 
