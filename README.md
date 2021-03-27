@@ -33,7 +33,7 @@
 
 - sitúate encima
 
-  cd Starship-Business
+  cd <name>
 
 ##
 
