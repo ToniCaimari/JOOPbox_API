@@ -25,7 +25,7 @@
 
 - Crea un directorio
 
-  mkdir <name>
+  mkdir APIrest
 
 ##
 
@@ -33,7 +33,7 @@
 
 - sitúate encima
 
-  cd <name>
+  cd APIrest
 
 ##
 
